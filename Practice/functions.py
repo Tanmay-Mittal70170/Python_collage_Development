@@ -98,3 +98,100 @@ def m1(**x):
 
 m1(a=10, b=20, c=30)
 m1(id=100, name="Subhulaxmi")
+
+
+# Note: 
+
+# def m():
+#     a=11
+#     print(a)
+# def n():
+#     print(a)
+
+# m()
+# n()
+
+
+a=11
+b=12
+def m():
+    print("a from function m():",a)
+    print("b from function m()",b)
+def n():
+    print("a from function n():",a)
+    print("b from function n()",b)
+
+m()
+n()
+
+
+a=1
+def m1():
+    global a
+    a=2
+    print("a value from m1():",a)
+
+def m2():
+    print("a value from m2():",a)
+
+m1()
+m2()
+
+
+a=1
+def m():
+    a=2
+    print(a)
+    print(globals()["a"])
+m()
+
+x=1
+for i in range(10):
+    def m():
+        global x
+        print(x)
+        x+=1
+    m()
+
+
+# Method: 2
+
+# Recurssion call ke baad reverse and call se phele straight print
+
+
+
+def printdata(x):
+    if x==11:
+        return
+    else:
+        
+        printdata(x+1) # ye  ek jyada lega ye Lifo ko use karta hai last input first come 
+        print(x)
+printdata(1)
+
+# Second Senario
+
+def printdata(x):
+    if x==11:
+        return
+    else:
+        print(x)
+        printdata(x+1) # ye  ek jyada lega ye FifO ko use karta hai First come first output
+        
+printdata(1)
+
+
+# Question: To find the factorial of the given function:
+
+def factorial(x):
+    if x==0:
+        return 1
+    else:
+        return x*factorial(x-1)
+
+print(factorial(7))
+
+
+
+
+
