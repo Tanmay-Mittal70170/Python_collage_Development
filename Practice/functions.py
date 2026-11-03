@@ -192,6 +192,122 @@ def factorial(x):
 print(factorial(7))
 
 
+def sod(x):
+    if x=="":
+        return 0
+    else:
+        return int(x[0])+sod(x[1:])
+
+print(sod("12345"))
+
+
+# by using number in input
+
+def sumofdigit(number):
+    if number==0:
+        return 0
+    else:
+        string=str(number)
+        length=len(string)-1
+        
+
+        return number%10 + sumofdigit(number//10)
+
+print(sumofdigit(12345))
+
+
+def reverse(x):
+    if x=="":
+        return ""
+    else:
+        return x[-1]+reverse(x[:-1:1])
+
+print(reverse("Tanmay"))
+
+
+# Method 2: using two string
+
+def strrev(orignal,reversed):
+    if orignal=="":
+        return reversed
+
+    else:
+        reversed+=orignal[-1]
+        orignal=orignal[:-1]
+
+    return strrev(orignal,reversed)
+
+print(strrev("yes",""))
 
 
 
+def add(num1,num2):
+    if num1==0:
+        return 0
+    else:
+       return num2+num1%10+add(num1//10,num2)
+
+print(add(123,0))
+
+
+# using map in a function 
+
+l=[12,32,4,5]
+def cube(x):
+    return x**3
+l1= list(map(cube,l))
+
+# using reduce function 
+
+from functools import reduce
+
+L=[2,3,45,6,7,5,43,24,123,543,454]
+
+l1=reduce(lambda x,y: x+y, L)
+
+print(l1)
+
+
+# words=["Python","is","good", "programming","Language"]
+# s=reduce(lambda x,y: len(x) if len(x)>len(y) else len(y),words)
+# print(s)
+
+# genrator function: 
+
+def abcd(f,l5):
+    for i in l5:
+        yield f(i)
+l5=[1,2,3,4,5]
+l5=list(abcd(str,l5))
+
+s=list(abcd(int,input().split()))
+
+print(l5)
+print(s)
+
+def m(x,y):
+    while x<=y:
+        yield x 
+        x+=1
+
+g=m(5,10)
+print(type(g))
+print(g)
+print(next(g))
+print(next(g))
+print(next(g))
+print(next(g))
+print(next(g))
+print(next(g))
+print(next(g))
+print(next(g))
+
+
+def count_up_to(n):
+    count = 1
+    while count <= n:
+        yield count
+        count += 1
+
+for num in count_up_to(5):
+    print(num)  # 1, 2, 3, 4, 5   
