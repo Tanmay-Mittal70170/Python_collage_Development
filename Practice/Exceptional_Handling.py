@@ -37,20 +37,40 @@
 #     print("final block")
 
 
-try:
-    print("outer Try block")
+# try:
+#     print("outer Try block")
     
-    try:
-        print("inner try  block")
-        print(10/0)
-    except NameError:
-        print("inner exception block")
-    finally:
-        print("inner finally block")
+#     try:
+#         print("inner try  block")
+#         print(10/0)
+#     except NameError:
+#         print("inner exception block")
+#     finally:
+#         print("inner finally block")
 
-except:
-    print("outer exception block")
-finally:
-    print("outer finally block")
+# except:
+#     print("outer exception block")
+# finally:
+#     print("outer finally block")
 
-        
+# try:
+#     print("Try block")
+#     print(10/0)
+# except ZeroDivisionError:
+#     print("exceptional block")
+# else:
+#     print("else block")
+# finally:
+#     print("final block")
+
+
+# # use of raise keyword:
+
+# try:
+#     x=int(input("enter the number"))
+#     if x<0:
+#         raise ValueError(x)
+
+# except ValueError as v:
+#     print("You provoked {}. Please provide positive integer values only".format(v))
+
